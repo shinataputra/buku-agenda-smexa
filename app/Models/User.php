@@ -44,4 +44,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Fungsi untuk menampilkan avatar user
+     *
+     * @return string
+     */
+    public function showAvatar(): string
+    {
+        return 'assets/images/profile/user-1.jpg';
+    }
 }
