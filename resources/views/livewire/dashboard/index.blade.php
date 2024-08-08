@@ -18,10 +18,10 @@
 
     {{-- Table --}}
     <div class="table-responsive">
-        <table class="table table-bordered border table-hover text-nowrap">
-            <thead class="table-info text-center align-middle">
+        <table class="table table-bordered border table-striped">
+            <thead class="table-primary text-center align-middle">
                 <tr>
-                    <th rowspan="2">No Agenda</th>
+                    <th rowspan="2">No.</th>
                     <th rowspan="2">Tanggal Terima</th>
                     <th colspan="3">Surat</th>
                     <th rowspan="2">Dari</th>
@@ -38,7 +38,7 @@
             </thead>
             <tbody>
                 @forelse ($agendas as $agenda)
-                    <tr class="text-center" wire:key='{{ $agenda->id }}'>
+                    <tr class="text-start" wire:key='{{ $agenda->id }}'>
                         <td>{{ $agendas->firstItem() + $loop->index }}.</td>
                         <td>{{ $agenda->tanggal_terima }}</td>
                         <td>
@@ -54,12 +54,12 @@
                         <td>{{ $agenda->hal }}</td>
                         <td>{{ $agenda->keterangan }}</td>
                         <td>{{ $agenda->kode_arsip }}</td>
-                        <td>
+                        <td class="text-center">
                             <a href="{{ route('agenda.edit', $agenda->id) }}" class="btn btn-sm btn-warning"
                                 wire:navigate>
                                 <i class="ti ti-pencil"></i>
                             </a>
-                            <button class="btn btn-sm btn-danger"
+                            <button class="btn btn-sm btn-danger mt-2"
                                 @click="$dispatch('delete-agenda', {id: {{ $agenda->id }}})">
                                 <i class="ti ti-trash"></i>
                             </button>
