@@ -13,11 +13,11 @@ class Agenda extends Model
 
     public function getTanggalSuratAttribute($value)
     {
-        return \Carbon\Carbon::parse($value)->format('y/m/d');
+        return \Carbon\Carbon::parse($value)->format('d/m/y');
     }
 
     public function getTanggalTerimaAttribute($value)
     {
-        return \Carbon\Carbon::parse($value)->format('y/m/d');
+        return \Carbon\Carbon::parse($value)->format('d/m/y');
     }
 }
