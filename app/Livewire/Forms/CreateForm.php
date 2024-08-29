@@ -34,10 +34,8 @@ class CreateForm extends Form
 
     public function store()
     {
-        $this->validate();
+        $data = $this->validate();
 
-        Agenda::create(
-            $this->pull()
-        );
+        Agenda::create($data);
     }
 }

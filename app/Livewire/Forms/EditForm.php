@@ -35,10 +35,8 @@ class EditForm extends Form
 
     public function update()
     {
-        $this->validate();
+        $data = $this->validate();
 
-        $this->agenda->update(
-            $this->pull()
-        );
+        $this->agenda->update($data);
     }
 }

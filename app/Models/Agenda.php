@@ -10,4 +10,14 @@ class Agenda extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function getTanggalSuratAttribute($value)
+    {
+        return \Carbon\Carbon::parse($value)->format('y/m/d');
+    }
+
+    public function getTanggalTerimaAttribute($value)
+    {
+        return \Carbon\Carbon::parse($value)->format('y/m/d');
+    }
 }
